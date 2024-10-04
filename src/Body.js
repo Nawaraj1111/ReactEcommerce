@@ -7,9 +7,10 @@ export const Body=()=>{
     const [listProduct, setListProduct] = useState(Products);
 
     const HighRated=()=>{
-        const filterProduct = listProduct.filter(product=>product.rating.rate>=4.5);
+        const filterProduct = listProduct.filter(product=>product.rating.rate>=4);
         setListProduct(filterProduct);
     }
+
     return(
         <>
         <div>
