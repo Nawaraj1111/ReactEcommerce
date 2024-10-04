@@ -7,14 +7,24 @@ export const Body=()=>{
     const [listProduct, setListProduct] = useState(Products);
 
     const HighRated=()=>{
-        const filterProduct = listProduct.filter(product=>product.rating.rate>=4);
+        const filterProduct = Products.filter(product=>product.rating.rate>=4);
+        setListProduct(filterProduct);
+    }
+    const LeastRated=()=>{
+        const filterProduct = Products.filter(product=>product.rating.rate<=2);
         setListProduct(filterProduct);
     }
 
+    const Reset=()=>{
+        const filterProduct = Products.filter(product=>(product.rating.rate>=0 && product.rating.rate<=5));
+        setListProduct(filterProduct);
+    }
     return(
         <>
         <div>
             <button onClick={HighRated}>Top Rated</button>
+            <button onClick={LeastRated}>Least Rated</button>
+            <button onClick={Reset}>Reset</button>
         </div>
         <div className="bodyProduct">
             {
