@@ -52,3 +52,19 @@ img{
     margin-top:5px;
     background-color: rgb(244, 246, 246);
 }
+
+
+skeleton-container{
+    background-color: beige;
+}
+
+skeleton{
+    background-color: rgb(158, 164, 164);
+    text-align: center;
+    margin: 2px;
+    padding: 3px;
+    padding-top: 0px;
+    border: 1px solid rgb(50, 50, 50);
+    width: 250px;
+    height: 400px;
+}
