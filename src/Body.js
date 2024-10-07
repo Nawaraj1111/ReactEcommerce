@@ -39,10 +39,10 @@ export const Body=()=>{
         <>
         <div>
             <div>
-            <input type="text" onChange={(e) => setSearch((e.target.value).toUpperCase)}  value={search}  /> 
+            <input type="text" onChange={(e) => setSearch(e.target.value)}  value={search}  /> 
             <button onClick={(e)=>{
                 const searchText= orginalProduct.filter((product)=>{
-                    return product.title.includes(search)
+                    return product.title.toUpperCase().includes(search.toUpperCase());
                 });
                 (searchText.length == 0) ? <Skeleton/> : setListProduct(searchText);
             }}
