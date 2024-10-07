@@ -2,23 +2,25 @@ import { useEffect, useState } from "react";
 // import { Products } from "../Utils/Products";
 import { Product } from "./Product.js";
 import { useState } from "react";
-import Skeleton from "./Skeleton.js"
-
+import { Skeleton } from "./Skeleton.js";
 export const Body=()=>{
     const [listProduct, setListProduct] = useState([]);
     const [orginalProduct, setOriginalProduct] = useState([]);
-    
+    const [loading, setLoading] = useState(true);
+
+
     useEffect(()=>{
         ProductList();
     },[]);
 
-
+   
 
     const ProductList = async()=>{
         const data=await fetch('https://fakestoreapi.com/products/')
         const resJson = await data.json();
         setListProduct(resJson);
         setOriginalProduct(resJson);
+        setLoading(false);
     }
 
 
@@ -35,6 +37,11 @@ export const Body=()=>{
         const filterProduct = orginalProduct.filter(product=>(product.rating.rate>=0 && product.rating.rate<=5));
         setListProduct(filterProduct);
     }
+
+    if(loading)
+        {
+            return <Skeleton/>;
+        }
     return(
         <>
         <div>
@@ -42,6 +49,7 @@ export const Body=()=>{
             <button onClick={LeastRated}>Least Rated</button>
             <button onClick={Reset}>Reset</button>
         </div>
+       
         <div className="bodyProduct">
             {
                 listProduct.map((product,index)=>{
