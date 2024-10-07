@@ -38,11 +38,7 @@ export const Body=()=>{
         setListProduct(filterProduct);
     }
 
-    if(loading)
-        {
-            return <Skeleton/>;
-        }
-    return(
+    return loading?<Skeleton/>:(
         <>
         <div>
             <button onClick={HighRated}>Top Rated</button>
