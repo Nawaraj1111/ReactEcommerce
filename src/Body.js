@@ -45,8 +45,7 @@ export const Body=()=>{
                     return product.title.toUpperCase().includes(search.toUpperCase());
                 });
                 (searchText.length == 0) ? <Skeleton/> : setListProduct(searchText);
-            }}
-            >Search</button>
+            }} >Search</button>
 
             </div>
             <button onClick={HighRated}>Top Rated</button>
