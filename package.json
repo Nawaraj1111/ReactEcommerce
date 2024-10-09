@@ -5,8 +5,8 @@
   "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel hello.html",
-    "build": "parcel hello.html"
+    "start":"parcel hello.html",
+    "build":"parcel hello.html"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2"
+    "react-dom": "^18.3.1"
   }
 }
