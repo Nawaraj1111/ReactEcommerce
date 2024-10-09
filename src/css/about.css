@@ -1,0 +1,27 @@
+/* src/styles/Contact.css */
+
+.about-us {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px; /* Space inside the div */
+    margin: 20px; /* Space outside the div */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center align text */
+}
+
+h1 {
+    color: #333; /* Dark gray color for headings */
+    font-size: 24px; /* Font size for headings */
+    margin-bottom: 10px; /* Space below headings */
+}
+
+a {
+    color: #007BFF; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Font size for links */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #0056b3; /* Darker blue on hover */
+}
