@@ -10,6 +10,8 @@ import { Register } from "./Register";
 import { Body } from "./Body";
 import { Product } from "./Product";
 import { CallUs } from "./CallUs";
+import { ProductDetails } from "./ProductDetails";
+
 
 const App = () => {
     return (
@@ -20,7 +22,7 @@ const App = () => {
                 <ContactUs />
             </div>
             <div className="body">
-                <Outlet /> {/* Render child routes here */}
+                <Outlet /> 
             </div>
         </div>
     );
@@ -44,6 +46,10 @@ const router = createBrowserRouter([
             {
                 path: 'product',
                 element: <Product />,
+            },
+            {
+                path: 'productDetails/:productId',
+                element: <ProductDetails />,
             },
             {
                 path: 'register',

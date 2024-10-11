@@ -3,6 +3,9 @@ import { Products } from "../Utils/Products";
 import { Product } from "./Product.js";
 import { useState } from "react";
 import { Skeleton } from "./Skeleton.js";
+import {Link} from "react-router-dom";
+import { ProductDetails } from "./ProductDetails.js";
+
 export const Body=()=>{
     const [listProduct, setListProduct] = useState([]);
     const [orginalProduct, setOriginalProduct] = useState([]);
@@ -57,12 +60,13 @@ export const Body=()=>{
             {
                 listProduct.map((product,index)=>{
                     return(
-                        <Product key={product.id} product={product}/>
+                        <Link to={`/productDetails/${product.id}`} key={product.id}>
+                        <Product product={product} />
+                    </Link>
                     );
                 })
             }
         </div>
         </>
-        
     );
 }

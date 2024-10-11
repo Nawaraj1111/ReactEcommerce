@@ -1,5 +1,5 @@
 
-export const Product = ({product})=>{
+export const Product = ({product})=>{    
     const {id,title,price,image,rating}=product;
     return(
     <div className="product">
