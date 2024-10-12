@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { CompanyName } from "./CompanyName";
 import { About } from "./About";
 import { ContactUs } from "./ContactUs";
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet,Link } from 'react-router-dom';
 import { NotFound } from "./NotFound";
 import { Login } from "./Login";
 import { Register } from "./Register";
@@ -17,7 +17,7 @@ const App = () => {
     return (
         <div>
             <div className="navBar">
-                <CompanyName />
+                <Link to="" className="text-deco"><CompanyName /></Link>
                 <About />
                 <ContactUs />
             </div>
@@ -35,12 +35,9 @@ const router = createBrowserRouter([
         element: <App />,
         errorElement: <NotFound />,
         children: [
+
             {
-                path: 'login',
-                element: <Login />,
-            },
-            {
-                path:"home",
+                path:"",
                 element:<Body/>
             },
             {
@@ -51,10 +48,7 @@ const router = createBrowserRouter([
                 path: 'productDetails/:productId',
                 element: <ProductDetails />,
             },
-            {
-                path: 'register',
-                element: <Register />,
-            },
+            
             {
                 path:'contactus',
                 element:<CallUs />
@@ -64,6 +58,14 @@ const router = createBrowserRouter([
     {
         path:"dommy",
         element:<NotFound/>
+    },
+    {
+        path: 'register',
+        element: <Register />,
+    },
+    {
+        path: 'login',
+        element: <Login />,
     },
     {
         path: '*', // Catch-all route for unmatched paths
