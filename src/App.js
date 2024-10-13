@@ -11,6 +11,7 @@ import { Body } from "./Body";
 import { Product } from "./Product";
 import { CallUs } from "./CallUs";
 import { ProductDetails } from "./ProductDetails";
+import { Calender } from "./Calender";
 
 
 const App = () => {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
     {
         path: 'register',
         element: <Register />,
+    },
+    {
+        path:'calender',
+        element:<Calender />
     },
     {
         path: 'login',

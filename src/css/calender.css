@@ -1,0 +1,9 @@
+.calender{
+    border:none; 
+    overflow:hidden;
+     width:1080px; 
+     height:650px; 
+     border-radius:5px;
+     padding:0px;
+     margin:0px;
+}

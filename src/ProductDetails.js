@@ -1,22 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams} from 'react-router-dom';
 import './css/productDetails.css'
+import useSingleProduct from "../hook/useSingleProduct";
 
 export const ProductDetails = () => {
     const { productId } = useParams(); // Ensure this matches your route definition
-    const [singleProduct , setSingleProduct] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-
-    const fetchData = async()=>{
-        const response = await fetch(`https://fakestoreapi.com/products/${productId}`);
-        const dataJson = await response.json();
-        setSingleProduct(dataJson);
-        setLoading(false);
-    }
-    useEffect(()=>{
-        fetchData();
-    },[productId])
+    const {singleProduct,loading} = useSingleProduct(productId);
 
     if(!singleProduct) return <p> product ......</p>
     if(loading) return <p>Loading is......</p>
