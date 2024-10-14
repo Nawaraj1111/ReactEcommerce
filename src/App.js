@@ -1,7 +1,7 @@
-import React from "react";
+import {React,lazy,Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import { CompanyName } from "./CompanyName";
-import { About } from "./About";
+import { About } from "./About.js";
 import { ContactUs } from "./ContactUs";
 import { createBrowserRouter, RouterProvider, Outlet,Link } from 'react-router-dom';
 import { NotFound } from "./NotFound";
@@ -12,20 +12,26 @@ import { Product } from "./Product";
 import { CallUs } from "./CallUs";
 import { ProductDetails } from "./ProductDetails";
 import { Calender } from "./Calender";
-
+// import {Grocery} from './Grocery.js'
+const Grocery = lazy(()=>import('./Grocery.js'));
 
 const App = () => {
     return (
         <div>
             <div className="navBar">
                 <Link to="" className="text-deco"><CompanyName /></Link>
-                <About />
+                {/* <About /> */}
                 <ContactUs />
-            </div>
+                <Suspense fallback={<h1>loading.....</h1>}>
+                    <Link to="/grocery">
+                        <button>Grocery</button>
+                    </Link>
+                </Suspense>            
+                </div>
             <div className="body">
                 <Outlet /> 
             </div>
-        </div>
+        </div> 
     );
 };
 
@@ -41,15 +47,15 @@ const router = createBrowserRouter([
                 path:"",
                 element:<Body/>
             },
-            {
-                path: 'product',
-                element: <Product />,
-            },
+
             {
                 path: 'productDetails/:productId',
                 element: <ProductDetails />,
             },
-            
+            {
+                path:'grocery',
+                element:<Grocery />
+            },
             {
                 path:'contactus',
                 element:<CallUs />
@@ -67,6 +73,11 @@ const router = createBrowserRouter([
     {
         path:'calender',
         element:<Calender />
+    },
+   
+    {
+        path: 'product',
+        element: <Product />,
     },
     {
         path: 'login',
