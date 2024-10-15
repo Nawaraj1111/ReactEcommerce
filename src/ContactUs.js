@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'; // Import the Link component
 
 export const ContactUs = () => {
     return (
-        <div className="contact-us">
+        <div className="flex justify-between text-emerald-900">
             <Link to="/contactus">
                 <button>Call Us</button>
             </Link>

@@ -26,15 +26,15 @@ const App = () => {
     };
 
     return (
-        <div>
-            <div className="navBar">
-                <Link to="/" className="text-deco"><CompanyName /></Link>
+        <div className="bg-orange-300">
+            <div className="m-3 justify-between flex text-emerald-700 bg-orange-300	 ">
+                <Link to="/" className="text-rose-900 font-bold  no-underline hover:no-underline hover:text-emerald-300	"><CompanyName /></Link>
                 <ContactUs />
-                <button onClick={handleGroceryClick} disabled={isPending}>
+                <button className="hover:text-yellow-600" onClick={handleGroceryClick} disabled={isPending}>
                     {isPending ? 'Loading...' : 'Grocery'}
                 </button>    
             </div>
-            <div className="body">
+            <div className="m-3">
                 <Outlet />
             </div>
         </div>
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '*', // Catch-all route for unmatched paths
-                element: <CallUs />,
+                element: <NotFound />,
             }
         ],
     },
