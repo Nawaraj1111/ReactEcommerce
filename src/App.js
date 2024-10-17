@@ -11,6 +11,7 @@ import { Product } from "./Product";
 import { CallUs } from "./CallUs";
 import { ProductDetails } from "./ProductDetails";
 import { Calender } from "./Calender";
+import Category from "./Category";
 
 const Grocery = lazy(() => import('./Grocery'));
 
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
     {
         path: 'product',
         element: <Product />,
+    },
+    {
+        path:'category',
+        element:<Category />
     },
     {
         path: 'login',
